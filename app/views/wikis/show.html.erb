@@ -1,6 +1,8 @@
 <div class="container">
   <div class="col-md-4">
+    <% if policy(@wiki).update? %>
     <%= link_to "Edit PhiliWiki", edit_wiki_path, class: 'btn btn-primary' %>
+    <% end %>
     <%= link_to "Delete PhiliWiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'You are about to delete a PhiliWiki do you want to proceed?'} %>
   </div>
 

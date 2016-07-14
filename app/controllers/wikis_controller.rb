@@ -31,7 +31,8 @@ class WikisController < ApplicationController
 
   def update
     @wiki = Wiki.find(params[:id])
-
+    authorize @wiki
+    
     if @wiki.update(wiki_params)
       flash[:notice] = "Update Successful!"
       redirect_to wiki_path(@wiki)
