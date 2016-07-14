@@ -8,15 +8,23 @@ class User < ActiveRecord::Base
   after_initialize :default_role
 
   def standard?
-    user.role == 'standard'
+    role == 'standard'
   end
 
   def premium?
-    user.role == 'premium'
+    role == 'premium'
   end
 
   def admin?
-    user.role == 'admin'
+    role == 'admin'
+  end
+
+  def upgrade_account
+    self.role == 'premium'
+  end
+
+  def downgrade_account
+    self.role == 'standard'
   end
 
   private
