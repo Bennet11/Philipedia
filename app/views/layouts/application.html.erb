@@ -11,6 +11,7 @@
   <div class="container">
     <ul class="nav nav-tabs">
       <li><%= link_to "Home", welcome_index_path %></li>
+      <li><%= link_to "PhiliWikis", wikis_path %></li>
       <li><%= link_to "About", welcome_about_path %></li>
 
     <div class="col-md-9">
@@ -25,11 +26,12 @@
       </div>
     </div>
     </ul>
+    <p class="notice center"><%= notice %></p>
+    <p class="alert center"><%= alert %></p>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
+  <%= yield %>
   </div>
+
 
 </body>
 </html>

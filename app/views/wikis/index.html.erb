@@ -1,0 +1,13 @@
+<h2 id="title">Philipedia</h2>
+   <div class="container">
+     <div class="row">
+       <div class="col-md-4">
+         <%= link_to "Create PhiliWiki", new_wiki_path, class: 'btn btn-primary' %>
+       </div><br>
+       <div class="col-md-8">
+         <% @wikis.each do |wiki| %>
+           <%= link_to wiki.title, wiki %>
+         <% end %>
+       </div>
+     </div>
+   </div>
