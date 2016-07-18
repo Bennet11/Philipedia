@@ -10,6 +10,13 @@
     <h1><%= markdown_to_html @wiki.title %></h2>
   </div>
 
+  <div class="col-md-4">
+    <h4>Collaborators:</h4>
+    <% @collaborators.each do |collaborator| %>
+      <p><%= collaborator.email %></p>
+    <% end %>
+  </div>
+
   <div class="col-md-8">
     <p><%= markdown_to_html @wiki.body %></p>
   </div>
