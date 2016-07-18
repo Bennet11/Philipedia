@@ -7,10 +7,10 @@
   </div>
 
   <div class="col-md-4">
-    <h1><%= @wiki.title %></h2>
+    <h1><%= markdown_to_html @wiki.title %></h2>
   </div>
 
   <div class="col-md-8">
-    <p><%= @wiki.body %></p>
+    <p><%= markdown_to_html @wiki.body %></p>
   </div>
 </div>
