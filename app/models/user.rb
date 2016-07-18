@@ -19,12 +19,12 @@ class User < ActiveRecord::Base
     role == 'admin'
   end
 
-  def upgrade_account
-    self.role == 'premium'
+  def upgrade_role
+    self.update(role: 'premium')
   end
 
-  def downgrade_account
-    self.role == 'standard'
+  def downgrade_role
+    self.update(role: 'standard')
   end
 
   private

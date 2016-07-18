@@ -1,0 +1,11 @@
+<h4>Upgrade To Premium</h4>
+<% if current_user.standard? %>
+  <%= render partial: 'charges/form' %>
+<% elsif current_user.premium? %>
+  <%= link_to "Downgrade Account",
+  user_downgrade_account_path(current_user),
+  data: { confirm: 'Doing so will make your publicize your private wikis, continue?' },
+  method: :post, class: 'btn btn-danger' %>
+<% else %>
+  <h2>You are and Admin</h2>
+<% end %>

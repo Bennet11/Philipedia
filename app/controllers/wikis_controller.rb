@@ -1,7 +1,7 @@
 class WikisController < ApplicationController
 
   def index
-    @wikis = Wiki.all
+    @wikis = policy_scope(Wiki)
   end
 
   def show
@@ -32,7 +32,7 @@ class WikisController < ApplicationController
   def update
     @wiki = Wiki.find(params[:id])
     authorize @wiki
-    
+
     if @wiki.update(wiki_params)
       flash[:notice] = "Update Successful!"
       redirect_to wiki_path(@wiki)
